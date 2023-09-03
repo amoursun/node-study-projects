@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mddir": "^1.1.1",
+    "pinia": "^2.1.4"
+  }
+}

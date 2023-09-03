@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>POST 方法</h1>
+    <div class="content">
+        <div id="operate">请求</div>
+    </div>
+</body>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+<script>
+    const operate = document.getElementById('operate');
+    const content = document.querySelector('.content');
+    function createImg(src) {
+        const img = document.createElement('img');
+        img.classList.add('img');
+        img.src = src;
+        content.appendChild(img);
+    }
+    operate.addEventListener('click', function(e) {
+        axios({
+            method: 'post',
+            url: '/generateImage',
+            data: {
+                data: {
+                    xAxis: {
+                        type: 'category',
+                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [
+                        {
+                        data: [120, 200, 150, 80, 70, 110, 130],
+                        type: 'bar',
+                        showBackground: true,
+                        backgroundStyle: {
+                            color: 'rgba(180, 180, 180, 0.2)'
+                        }
+                        }
+                    ]
+                }
+            }
+        }).then(function(result) {
+            console.log('result', result);
+            const {status, data} = result;
+            if (status === 200) {
+                const {base64Image, url} = data;
+                createImg(url);
+                createImg(base64Image);
+            }
+        });
+    })
+</script>
+</html>

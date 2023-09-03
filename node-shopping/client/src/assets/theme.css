@@ -1,0 +1,12 @@
+/* 修改vant的主题颜色 */
+:root:root{
+  --van-nav-bar-background:#f86c35;
+  --van-nav-bar-title-text-color:#fff;
+  --van-font-bold:500;
+  --van-nav-bar-icon-color:#fff;
+  --van-nav-bar-arrow-size:20px;
+  --van-button-primary-background:#f86c35; 
+  --van-button-primary-border-color:#f86c35; 
+  --van-background:#f8f8f8;
+  --van-checkbox-checked-icon-color:#f86c35;
+}
