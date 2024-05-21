@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 module.exports = class Utils {
     getHotNews = (htmlStr) => {
         let hotNews = [];
-        // 访问成功，请求http://news.baidu.com/页面所返回的数据会包含在res.text中。
+        // 访问成功，请求http://news.bai.com/页面所返回的数据会包含在res.text中。
         
         /* 使用cheerio模块的cherrio.load()方法，将HTMLdocument作为参数传入函数
            以后就可以使用类似jQuery的$(selectior)的方式来获取页面元素

@@ -11,7 +11,7 @@ const utils = new Utils();
 
 const hotNews = [];                                // 热点新闻
 const localNews = [];                              // 本地新闻
-const pointUrl = 'http://news.baidu.com/';
+const pointUrl = 'http://news.bai.com/';
 let pageHtml = '';
 
 const app = express();
@@ -44,7 +44,7 @@ superagent.get(pointUrl).end((err, res) => {
         console.log(`热点新闻抓取失败 - ${err}`)
     }
     else {
-        // 访问成功，请求http://news.baidu.com/页面所返回的数据会包含在res
+        // 访问成功，请求http://news.bai.com/页面所返回的数据会包含在res
         // 抓取热点新闻数据
         hotNews.push(utils.getHotNews(res.text));
         pageHtml = res;
