@@ -1,3 +1,3 @@
 $(function() {
-    $("#baidu-input").focus();
+    $("#bai-input").focus();
 })

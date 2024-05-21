@@ -118,13 +118,13 @@ body {
 }
 /* end */
 
-.baidu-search input {
+.bai-search input {
     padding-left: .7rem;
     margin-bottom: .06rem;
     border: 1px solid #00b7ee;
     border-radius: .5rem;
 }
-.baidu-search button {
+.bai-search button {
     padding: .2rem;
     border: none;
     border-radius: .5rem;
